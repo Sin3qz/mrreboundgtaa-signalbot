@@ -2,10 +2,10 @@
   "strategy": "MR-Rebound-GTAA (Mean-Reversion, monatlich)",
   "name": "MR-Rebound-GTAA",
   "key": "mrreboundgtaa",
-  "updated": "2026-10-06T14:01:54.253829+02:00",
+  "updated": "2026-10-07T13:47:27.738739+02:00",
   "rebalance": "monthly",
   "rebalanceLabel": "Signal Monatsletzter → Handel 1. Handelstag",
-  "asOf": "2026-10-05",
+  "asOf": "2026-10-06",
   "needsRetry": false,
   "dataWarnings": [],
   "decisionDate": "2026-09-30",
@@ -46,32 +46,32 @@
     "NASDAQ100": {
       "display": "Nasdaq 100",
       "leverage": 3,
-      "rankValue": 0.073767,
-      "rebound": 0.076445,
+      "rankValue": 0.073637,
+      "rebound": 0.089555,
       "gates": 3,
       "target": 0.0728
     },
     "EM": {
       "display": "Emerging Markets",
       "leverage": 3,
-      "rankValue": 0.065624,
-      "rebound": 0.067265,
+      "rankValue": 0.064937,
+      "rebound": 0.067253,
       "gates": 3,
       "target": 0.2605
     },
     "INDIA": {
       "display": "India",
       "leverage": 3,
-      "rankValue": -0.027392,
-      "rebound": -0.070047,
+      "rankValue": -0.027175,
+      "rebound": -0.063157,
       "gates": 0,
       "target": 0.0
     },
     "TLT_LONG": {
       "display": "US-Treasury 20y+",
       "leverage": 5,
-      "rankValue": -0.016196,
-      "rebound": -0.066577,
+      "rankValue": -0.016555,
+      "rebound": -0.065705,
       "gates": 0,
       "target": 0.0
     }
@@ -88,29 +88,29 @@
     "rows": [
       [
         "3x India",
-        -0.027392,
-        -0.070047,
+        -0.027175,
+        -0.063157,
         "0/3",
         0.0
       ],
       [
         "5x TLT",
-        -0.016196,
-        -0.066577,
+        -0.016555,
+        -0.065705,
         "0/3",
         0.0
       ],
       [
         "3x EM",
-        0.065624,
-        0.067265,
+        0.064937,
+        0.067253,
         "3/3",
         0.2605
       ],
       [
         "3x Nasdaq",
-        0.073767,
-        0.076445,
+        0.073637,
+        0.089555,
         "3/3",
         0.0728
       ]
@@ -731,19 +731,19 @@
   },
   "freshness": {
     "^NDX": {
-      "last": "2026-10-05",
+      "last": "2026-10-06",
       "fresh": true
     },
     "EEM": {
-      "last": "2026-10-05",
+      "last": "2026-10-06",
       "fresh": true
     },
     "^BSESN": {
-      "last": "2026-10-05",
+      "last": "2026-10-06",
       "fresh": true
     },
     "TLT": {
-      "last": "2026-10-05",
+      "last": "2026-10-06",
       "fresh": true
     }
   },

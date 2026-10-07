@@ -1,6 +1,6 @@
 🔔 MR-Rebound-GTAA — MONATSWECHSEL (verspätet; regulär 01.10.2026)
 🔄 UMSCHICHTUNG
-Heute handeln (06.10.2026), Signal: Schluss 30.09.2026
+Heute handeln (07.10.2026), Signal: Schluss 30.09.2026
 
 Neue Zielquoten:
 • 26.0%  3x Emerging Markets
@@ -11,13 +11,13 @@ Neue Zielquoten:
   India: 8.3% -> 0.0%
 Nächstes Signal: Schluss 30.10. → Handel 02.11.2026
 
-Signale (1x-Kurse, Stand 05.10.):
+Signale (1x-Kurse, Stand 06.10.):
 ```
 Asset  Rang Rebnd Gate  Ziel
-India   -3%   -7%  0/3     –
+India   -3%   -6%  0/3     –
 TLT     -2%   -7%  0/3     –
-EM      +7%   +7%  3/3 26.0%
-Nasdaq  +7%   +8%  3/3  7.3%
+EM      +6%   +7%  3/3 26.0%
+Nasdaq  +7%   +9%  3/3  7.3%
 ```
 Rang = Ø SMA75–125/SMA175–250 (tiefster = Flop)
 Rebnd = Ø 42/50/56-Tage-Rendite
