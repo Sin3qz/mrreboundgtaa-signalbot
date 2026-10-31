@@ -2,16 +2,16 @@
   "strategy": "MR-Rebound-GTAA (Mean-Reversion, monatlich)",
   "name": "MR-Rebound-GTAA",
   "key": "mrreboundgtaa",
-  "updated": "2026-10-30T06:31:21.823341+01:00",
+  "updated": "2026-10-31T06:31:21.257055+01:00",
   "rebalance": "monthly",
   "rebalanceLabel": "Signal Monatsletzter → Handel 1. Handelstag",
-  "asOf": "2026-10-29",
+  "asOf": "2026-10-30",
   "needsRetry": false,
   "dataWarnings": [],
-  "decisionDate": "2026-09-30",
-  "tradeDate": "2026-10-01",
-  "nextDecision": "2026-10-30",
-  "nextRebalance": "2026-11-02",
+  "decisionDate": "2026-10-30",
+  "tradeDate": "2026-11-02",
+  "nextDecision": "2026-11-30",
+  "nextRebalance": "2026-12-01",
   "changedToday": false,
   "changeType": null,
   "monthlyNotifyToday": false,
@@ -26,54 +26,46 @@
   ],
   "allocation": [
     {
-      "asset": "EM",
-      "display": "Emerging Markets",
-      "weight": 0.2605,
-      "leverage": 3,
-      "product": "WisdomTree Emerging Markets 3x Daily Leveraged",
-      "isin": "IE00BYTYHN28"
-    },
-    {
-      "asset": "NASDAQ100",
-      "display": "Nasdaq 100",
-      "weight": 0.0728,
-      "leverage": 3,
-      "product": "WisdomTree NASDAQ 100 3x Daily Leveraged",
-      "isin": "IE00BLRPRL42"
+      "asset": "TLT_LONG",
+      "display": "US-Treasury 20y+",
+      "weight": 0.183,
+      "leverage": 5,
+      "product": "Leverage Shares 5x Long 20+ Year Treasury Bond",
+      "isin": "XS2595672036"
     }
   ],
   "signals": {
     "NASDAQ100": {
       "display": "Nasdaq 100",
       "leverage": 3,
-      "rankValue": 0.064018,
-      "rebound": -0.002271,
+      "rankValue": 0.063041,
+      "rebound": -0.032605,
       "gates": 2,
-      "target": 0.0728
+      "target": 0.0
     },
     "EM": {
       "display": "Emerging Markets",
       "leverage": 3,
-      "rankValue": 0.046118,
-      "rebound": -0.052285,
-      "gates": 1,
-      "target": 0.2605
+      "rankValue": 0.044784,
+      "rebound": -0.083709,
+      "gates": 0,
+      "target": 0.0
     },
     "INDIA": {
       "display": "India",
       "leverage": 3,
-      "rankValue": -0.022502,
-      "rebound": -0.057032,
+      "rankValue": -0.022172,
+      "rebound": -0.041185,
       "gates": 0,
       "target": 0.0
     },
     "TLT_LONG": {
       "display": "US-Treasury 20y+",
       "leverage": 5,
-      "rankValue": -0.020212,
-      "rebound": -0.005371,
-      "gates": 0,
-      "target": 0.0
+      "rankValue": -0.020285,
+      "rebound": 0.003325,
+      "gates": 1,
+      "target": 0.183
     }
   },
   "table": {
@@ -88,31 +80,31 @@
     "rows": [
       [
         "3x India",
-        -0.022502,
-        -0.057032,
+        -0.022172,
+        -0.041185,
         "0/3",
         0.0
       ],
       [
         "5x TLT",
-        -0.020212,
-        -0.005371,
+        -0.020285,
+        0.003325,
+        "1/3",
+        0.183
+      ],
+      [
+        "3x EM",
+        0.044784,
+        -0.083709,
         "0/3",
         0.0
       ],
       [
-        "3x EM",
-        0.046118,
-        -0.052285,
-        "1/3",
-        0.2605
-      ],
-      [
         "3x Nasdaq",
-        0.064018,
-        -0.002271,
+        0.063041,
+        -0.032605,
         "2/3",
-        0.0728
+        0.0
       ]
     ],
     "kinds": [
@@ -127,11 +119,6 @@
     "span": "letzte 120 Monatsentscheidungen",
     "what": "welches gehaltene Asset auf Platz 3 von 3 lag (schwächster SMA-Rang = Flop)",
     "items": [
-      {
-        "date": "2016-10-31",
-        "lead": "NASDAQ100",
-        "allocation": "NASDAQ100:0.2059"
-      },
       {
         "date": "2016-11-30",
         "lead": "NASDAQ100",
@@ -726,24 +713,29 @@
         "date": "2026-09-30",
         "lead": "EM",
         "allocation": "EM:0.2605|NASDAQ100:0.0728"
+      },
+      {
+        "date": "2026-10-30",
+        "lead": "TLT_LONG",
+        "allocation": "TLT_LONG:0.183"
       }
     ]
   },
   "freshness": {
     "^NDX": {
-      "last": "2026-10-29",
+      "last": "2026-10-30",
       "fresh": true
     },
     "EEM": {
-      "last": "2026-10-29",
+      "last": "2026-10-30",
       "fresh": true
     },
     "^BSESN": {
-      "last": "2026-10-29",
+      "last": "2026-10-30",
       "fresh": true
     },
     "TLT": {
-      "last": "2026-10-29",
+      "last": "2026-10-30",
       "fresh": true
     }
   },
