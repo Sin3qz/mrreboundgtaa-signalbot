@@ -1,7 +1,14 @@
-📊 MR-Rebound-GTAA (Mean-Reversion, monatlich) — Tagesstatus
-Ziel ab 02.11.2026 (Signal 30.10.):
+🔔 MR-Rebound-GTAA — MONATSWECHSEL
+🔄 UMSCHICHTUNG
+Handeln am 02.11.2026 (Signal: Schluss 30.10.2026)
+
+Neue Zielquoten:
 • 18.3%  5x US-Treasury 20y+
 • 81.7%  Cash
+Änderung ggü. Vormonat:
+  EM: 26.0% -> 0.0%
+  TLT: 0.0% -> 18.3%
+  Nasdaq: 7.3% -> 0.0%
 Nächstes Signal: Schluss 30.11. → Handel 01.12.2026
 
 Signale (1x-Kurse, Stand 30.10.):
