@@ -4,8 +4,11 @@
 #
 #  Duo: 50 % Korb A = Nasdaq 100 + Emerging Markets + TLT
 #       50 % Korb B = Nasdaq 100 + India + TLT
-#  Invest: Nasdaq 3x, EM 3x, India 3x, TLT 5x (volle Quote im 5x-TLT-Produkt, freigegeben 29.09.2026)
-#  Signale auf 1x-Kursen wie im Backtest: ^NDX, EEM, ^BSESN (Sensex, INR), TLT.
+#  Invest: Nasdaq 3x, EM 3x, India 3x, Anleihe 3x IEF (US-Treasury 7-10y, WisdomTree) mit voller Signalquote.
+#     Ab 02.11.2026 statt 5x TLT (Leverage Shares): hohe Produktkosten, und im Backtest 2004-2026 (synthetisch,
+#     gleiche Signale) bei gleicher CAGR (17,8 %) kleineres MaxDD (-38,6 % statt -44,3 %), Sharpe 0,84 statt 0,71;
+#     1x TLT lag fast gleichauf (17,5 % / -39,0 % / 0,83). Siehe studien/STUDIE.md im Dashboard-Repo.
+#  Signale auf 1x-Kursen wie im Backtest: ^NDX, EEM, ^BSESN (Sensex, INR), TLT (Anleihe-Signal bleibt TLT).
 #
 #  Zeitplan: Signal = Schlusskurse des LETZTEN Handelstags des Monats,
 #            Handel  = 1. Handelstag des Folgemonats (NYSE-Kalender).
@@ -17,7 +20,7 @@
 #     Rebound > 0 UND Gate; beide -> 1/3 (schwaechstes) + 2/3 (2.-schwaechstes);
 #     nur eines -> max(Slot, 50 %); sonst Cash.  Kein Vol-Target.
 #
-#  Backtest 1995+ mit exakt diesen 34.884 Varianten (1er-Schritte), TLT-Quote voll in 5x-TLT:
+#  Backtest 1995+ mit exakt diesen 34.884 Varianten (1er-Schritte), damals TLT-Quote voll in 5x-TLT:
 #     21 Tranchen:          CAGR 19,4 %, MaxDD -47,6 %, Sortino 0,85, z31 2,68, z4 2,01, P(DD<-50 %) 6,1 %, P(DD<-75 %) 0 %
 #     nur letzter Handelstag: CAGR 21,1 %, MaxDD -45,3 %, Sortino 0,88, z31 2,82, z4 2,09, P(DD<-50 %) 11,1 %, P(DD<-75 %) 0,1 %
 #  KEINE ANLAGEBERATUNG.
@@ -35,8 +38,8 @@ ASSETS = {
                       product="WisdomTree Emerging Markets 3x Daily Leveraged", isin="IE00BYTYHN28"),
     "INDIA":     dict(signal="^BSESN", leverage=3, display="India", short="India",
                       product="Leverage Shares 3x Long India (INDA)", isin="XS2595675302", us_market=False),
-    "TLT_LONG":  dict(signal="TLT", leverage=5, display="US-Treasury 20y+", short="TLT",
-                      product="Leverage Shares 5x Long 20+ Year Treasury Bond", isin="XS2595672036"),
+    "TLT_LONG":  dict(signal="TLT", leverage=3, display="US-Treasury 7-10y", short="UST",          # Signal TLT, Produkt 3x IEF
+                      product="WisdomTree US Treasuries 10Y 3x Daily Leveraged", isin="IE00BKT09032"),
 }
 BASKETS = [["NASDAQ100", "EM", "TLT_LONG"], ["NASDAQ100", "INDIA", "TLT_LONG"]]
 BASKET_LABELS = ["A: Nasdaq · EM · TLT", "B: Nasdaq · India · TLT"]
