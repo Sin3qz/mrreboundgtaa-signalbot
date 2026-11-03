@@ -11,7 +11,7 @@ Duo aus zwei Körben zu je 50 %:  **A = Nasdaq 100 + Emerging Markets + TLT**,  
 | Nasdaq 100 | `^NDX` | USD | 3x — WisdomTree NASDAQ 100 3x Daily Leveraged, IE00BLRPRL42 |
 | Emerging Markets | `EEM` | USD | 3x — WisdomTree Emerging Markets 3x Daily Leveraged (3EML), IE00BYTYHN28 (Basis: MSCI-EM-Futures, USD) |
 | India | `^BSESN` (Sensex) | INR = Lokalwährung, währungsneutral (wie „hedged“) | 3x — Leverage Shares 3x Long India (INDA), XS2595675302 |
-| US-Treasury 20y+ | `TLT` | USD | **5x** — Leverage Shares 5x Long 20+ Year Treasury Bond, XS2595672036 (volle Quote) |
+| US-Treasury (Signal 20y+) | `TLT` | USD | **3x IEF** — WisdomTree US Treasuries 10Y 3x Daily Leveraged, IE00BKT09032 (volle Quote, ab 02.11.2026; vorher 5x TLT) |
 
 Die Signalreihen sind **exakt die des Backtests** (p5data.sig_px: `^NDX`, `EEM`, `^BSESN`, `TLT`). Kein Signal in
 EUR-unhedged.
@@ -23,9 +23,9 @@ EUR-unhedged.
   - bestätigt, wenn Rendite über R Tage > 0 **und** Kurs > SMA_G.
   - beide bestätigt → schwächstes 1/3, zweitschwächstes 2/3; nur eines → max(Slot; 50 %); keines → Cash.
 - Gesamt = ½ Korb A + ½ Korb B. **Kein Vol-Target.**
-- **TLT:** volle Signalquote im **5x-TLT** (freigegeben 29.09.2026).
+- **Anleihe:** Signal TLT, volle Signalquote im **3x IEF** (ab 02.11.2026 statt 5x TLT: hohe Produktkosten; Backtest 2004–2026 gleiche CAGR 17,8 %, MaxDD −38,6 % statt −44,3 %, Sharpe 0,84 statt 0,71).
 
-Backtest 1995+ (genau diese Umsetzung, TLT 5x): 21 Tranchen CAGR 19,4 %, MaxDD −47,6 %, Sortino 0,85, z31 2,68, z4 2,01,
+Backtest 1995+ (damalige Umsetzung mit TLT 5x): 21 Tranchen CAGR 19,4 %, MaxDD −47,6 %, Sortino 0,85, z31 2,68, z4 2,01,
 P(DD<−50 %) 6,1 %, P(DD<−75 %) 0 %; nur letzter Handelstag CAGR 21,1 %, MaxDD −45,3 %, Sortino 0,88, z31 2,82, z4 2,09,
 P(DD<−50 %) 11,1 %, P(DD<−75 %) 0,1 %.
 

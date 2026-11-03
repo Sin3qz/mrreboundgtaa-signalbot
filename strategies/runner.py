@@ -63,8 +63,8 @@ def compute(P, rows):
 
 
 def trade_view(w):
-    """Zielquoten = Signalquoten, je Baustein mit seinem Invest-Hebel (Nasdaq/EM/India 3x, TLT 5x —
-    volle TLT-Quote im 5x-Produkt, freigegeben 29.09.2026). Rest (nur wenn Slots leer) = Cash."""
+    """Zielquoten = Signalquoten, je Baustein mit seinem Invest-Hebel (Nasdaq/EM/India 3x, Anleihe 3x IEF
+    mit voller Signalquote, ab 02.11.2026; vorher 5x TLT). Rest (nur wenn Slots leer) = Cash."""
     out = [dict(asset=a, signal=w[k], trade=w[k], lev=ASSETS[a]["leverage"]) for k, a in enumerate(AL) if w[k] > U.W_EPS]
     return sorted(out, key=lambda x: -x["signal"])
 
@@ -137,7 +137,7 @@ def build_messages(c):
     order, rows = _sig_rows(c["info"], c["w"], -1)
     tab = U.table(["Asset", "Rang", "Rebnd", "Gate", "Ziel"], rows, "lrrrr")
     legend = ["Rang = Ø SMA75–125/SMA175–250 (tiefster = Flop)", "Rebnd = Ø 42/50/56-Tage-Rendite",
-              "Gate = Kurs > SMA100/200/250", "Ziel = Quote (Nasdaq/EM/India 3x, TLT 5x)"]
+              "Gate = Kurs > SMA100/200/250", "Ziel = Quote (Nasdaq/EM/India 3x, Anleihe 3x IEF)"]
     disc = L + ["", f"Signale (1x-Kurse, Stand {U.de_short(c['asof'])}):", "```"] + tab + ["```"] + legend
     ntfy = L + ["", f"Signale (Stand {U.de_short(c['asof'])}):"] + [
         f"{r[0]}: Rang {r[1]}, Rebnd {r[2]}, Gate {r[3]}, Ziel {r[4]}" for r in rows]
@@ -229,7 +229,7 @@ def run_strategy(raw=None, write_files=True):
         "table": {"head": ["Baustein", "Ø Rang", "Rebound", "Gate", "Ziel"],
                   "note": (f"Ø Rang = Mittel SMA_S/SMA_L − 1 über S={SMA_SHORT[0]}–{SMA_SHORT[-1]}, L={SMA_LONG[0]}–{SMA_LONG[-1]} "
                            f"(tiefster = Flop) · Rebound = Ø Rendite über {'/'.join(map(str, REBOUND_DAYS))} Handelstage · "
-                           f"Gate = Kurs > SMA{'/'.join(map(str, GATE_SMA))} (erfüllt/3) · Ziel = Zielquote (TLT 5x, Rest 3x)"),
+                           f"Gate = Kurs > SMA{'/'.join(map(str, GATE_SMA))} (erfüllt/3) · Ziel = Zielquote (alle 3x; Anleihe-Signal TLT, Produkt 3x IEF)"),
                   "rows": [[f"{ASSETS[a]['leverage']}x {ASSETS[a]['short']}", U.num(info["rank"][-1][AL.index(a)]), U.num(info["rebound"][-1][AL.index(a)]),
                             f"{int(info['gates'][-1][AL.index(a)])}/{len(GATE_SMA)}", U.num(w[AL.index(a)], 4)] for a in order],
                   "kinds": ["text", "spct", "spct", "text", "pct1"]},
