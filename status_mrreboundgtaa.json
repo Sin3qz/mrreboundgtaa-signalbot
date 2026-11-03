@@ -2,10 +2,10 @@
   "strategy": "MR-Rebound-GTAA (Mean-Reversion, monatlich)",
   "name": "MR-Rebound-GTAA",
   "key": "mrreboundgtaa",
-  "updated": "2026-11-03T00:07:47.138528+01:00",
+  "updated": "2026-11-04T00:43:35.276079+01:00",
   "rebalance": "monthly",
   "rebalanceLabel": "Signal Monatsletzter → Handel 1. Handelstag",
-  "asOf": "2026-11-02",
+  "asOf": "2026-11-03",
   "needsRetry": false,
   "dataWarnings": [],
   "decisionDate": "2026-10-30",
@@ -27,43 +27,43 @@
   "allocation": [
     {
       "asset": "TLT_LONG",
-      "display": "US-Treasury 20y+",
+      "display": "US-Treasury 7-10y",
       "weight": 0.183,
-      "leverage": 5,
-      "product": "Leverage Shares 5x Long 20+ Year Treasury Bond",
-      "isin": "XS2595672036"
+      "leverage": 3,
+      "product": "WisdomTree US Treasuries 10Y 3x Daily Leveraged",
+      "isin": "IE00BKT09032"
     }
   ],
   "signals": {
     "NASDAQ100": {
       "display": "Nasdaq 100",
       "leverage": 3,
-      "rankValue": 0.061987,
-      "rebound": -0.051404,
+      "rankValue": 0.060967,
+      "rebound": -0.045102,
       "gates": 2,
       "target": 0.0
     },
     "EM": {
       "display": "Emerging Markets",
       "leverage": 3,
-      "rankValue": 0.043472,
-      "rebound": -0.087674,
+      "rankValue": 0.042177,
+      "rebound": -0.084305,
       "gates": 0,
       "target": 0.0
     },
     "INDIA": {
       "display": "India",
       "leverage": 3,
-      "rankValue": -0.021823,
-      "rebound": -0.03899,
+      "rankValue": -0.02139,
+      "rebound": -0.021956,
       "gates": 0,
       "target": 0.0
     },
     "TLT_LONG": {
-      "display": "US-Treasury 20y+",
-      "leverage": 5,
-      "rankValue": -0.020364,
-      "rebound": 0.000885,
+      "display": "US-Treasury 7-10y",
+      "leverage": 3,
+      "rankValue": -0.02048,
+      "rebound": -0.007031,
       "gates": 0,
       "target": 0.183
     }
@@ -76,33 +76,33 @@
       "Gate",
       "Ziel"
     ],
-    "note": "Ø Rang = Mittel SMA_S/SMA_L − 1 über S=75–125, L=175–250 (tiefster = Flop) · Rebound = Ø Rendite über 42/50/56 Handelstage · Gate = Kurs > SMA100/200/250 (erfüllt/3) · Ziel = Zielquote (TLT 5x, Rest 3x)",
+    "note": "Ø Rang = Mittel SMA_S/SMA_L − 1 über S=75–125, L=175–250 (tiefster = Flop) · Rebound = Ø Rendite über 42/50/56 Handelstage · Gate = Kurs > SMA100/200/250 (erfüllt/3) · Ziel = Zielquote (alle 3x; Anleihe-Signal TLT, Produkt 3x IEF)",
     "rows": [
       [
         "3x India",
-        -0.021823,
-        -0.03899,
+        -0.02139,
+        -0.021956,
         "0/3",
         0.0
       ],
       [
-        "5x TLT",
-        -0.020364,
-        0.000885,
+        "3x UST",
+        -0.02048,
+        -0.007031,
         "0/3",
         0.183
       ],
       [
         "3x EM",
-        0.043472,
-        -0.087674,
+        0.042177,
+        -0.084305,
         "0/3",
         0.0
       ],
       [
         "3x Nasdaq",
-        0.061987,
-        -0.051404,
+        0.060967,
+        -0.045102,
         "2/3",
         0.0
       ]
@@ -723,19 +723,19 @@
   },
   "freshness": {
     "^NDX": {
-      "last": "2026-11-02",
+      "last": "2026-11-03",
       "fresh": true
     },
     "EEM": {
-      "last": "2026-11-02",
+      "last": "2026-11-03",
       "fresh": true
     },
     "^BSESN": {
-      "last": "2026-11-02",
+      "last": "2026-11-03",
       "fresh": true
     },
     "TLT": {
-      "last": "2026-11-02",
+      "last": "2026-11-03",
       "fresh": true
     }
   },

@@ -1,27 +1,27 @@
 🔔 MR-Rebound-GTAA — MONATSWECHSEL (verspätet; regulär 02.11.2026)
 🔄 UMSCHICHTUNG
-Heute handeln (03.11.2026), Signal: Schluss 30.10.2026
+Heute handeln (04.11.2026), Signal: Schluss 30.10.2026
 
 Neue Zielquoten:
-• 18.3%  5x US-Treasury 20y+
+• 18.3%  3x US-Treasury 7-10y
 • 81.7%  Cash
 Änderung ggü. Vormonat:
   EM: 26.0% -> 0.0%
-  TLT: 0.0% -> 18.3%
+  UST: 0.0% -> 18.3%
   Nasdaq: 7.3% -> 0.0%
 Nächstes Signal: Schluss 30.11. → Handel 01.12.2026
 
-Signale (1x-Kurse, Stand 02.11.):
+Signale (1x-Kurse, Stand 03.11.):
 ```
 Asset  Rang Rebnd Gate  Ziel
-India   -2%   -4%  0/3     –
-TLT     -2%    0%  0/3 18.3%
-EM      +4%   -9%  0/3     –
+India   -2%   -2%  0/3     –
+UST     -2%   -1%  0/3 18.3%
+EM      +4%   -8%  0/3     –
 Nasdaq  +6%   -5%  2/3     –
 ```
 Rang = Ø SMA75–125/SMA175–250 (tiefster = Flop)
 Rebnd = Ø 42/50/56-Tage-Rendite
 Gate = Kurs > SMA100/200/250
-Ziel = Quote (Nasdaq/EM/India 3x, TLT 5x)
+Ziel = Quote (Nasdaq/EM/India 3x, Anleihe 3x IEF)
 
 Hebel-ETPs: Pfad-/Emittentenrisiko. KEINE ANLAGEBERATUNG.
