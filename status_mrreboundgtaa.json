@@ -2,20 +2,20 @@
   "strategy": "MR-Rebound-GTAA (Mean-Reversion, monatlich)",
   "name": "MR-Rebound-GTAA",
   "key": "mrreboundgtaa",
-  "updated": "2026-11-04T00:43:35.276079+01:00",
+  "updated": "2026-11-05T00:57:04.152529+01:00",
   "rebalance": "monthly",
   "rebalanceLabel": "Signal Monatsletzter → Handel 1. Handelstag",
-  "asOf": "2026-11-03",
+  "asOf": "2026-11-04",
   "needsRetry": false,
   "dataWarnings": [],
   "decisionDate": "2026-10-30",
   "tradeDate": "2026-11-02",
   "nextDecision": "2026-11-30",
   "nextRebalance": "2026-12-01",
-  "changedToday": true,
-  "changeType": "SWITCH",
-  "monthlyNotifyToday": true,
-  "late": true,
+  "changedToday": false,
+  "changeType": null,
+  "monthlyNotifyToday": false,
+  "late": false,
   "pendingDecision": null,
   "pendingTrade": null,
   "cooldown": 0,
@@ -26,46 +26,46 @@
   ],
   "allocation": [
     {
-      "asset": "TLT_LONG",
-      "display": "US-Treasury 7-10y",
-      "weight": 0.183,
-      "leverage": 3,
-      "product": "WisdomTree US Treasuries 10Y 3x Daily Leveraged",
-      "isin": "IE00BKT09032"
+      "asset": "CASH",
+      "display": "Cash",
+      "weight": 1.0,
+      "leverage": 1,
+      "product": "—",
+      "isin": ""
     }
   ],
   "signals": {
     "NASDAQ100": {
       "display": "Nasdaq 100",
       "leverage": 3,
-      "rankValue": 0.060967,
-      "rebound": -0.045102,
+      "rankValue": 0.059995,
+      "rebound": -0.038617,
       "gates": 2,
       "target": 0.0
     },
     "EM": {
       "display": "Emerging Markets",
       "leverage": 3,
-      "rankValue": 0.042177,
-      "rebound": -0.084305,
+      "rankValue": 0.040944,
+      "rebound": -0.090481,
       "gates": 0,
       "target": 0.0
     },
     "INDIA": {
       "display": "India",
       "leverage": 3,
-      "rankValue": -0.02139,
-      "rebound": -0.021956,
-      "gates": 0,
+      "rankValue": -0.020873,
+      "rebound": -0.003259,
+      "gates": 2,
       "target": 0.0
     },
     "TLT_LONG": {
       "display": "US-Treasury 7-10y",
       "leverage": 3,
-      "rankValue": -0.02048,
-      "rebound": -0.007031,
+      "rankValue": -0.021082,
+      "rebound": -0.004439,
       "gates": 0,
-      "target": 0.183
+      "target": 0.0
     }
   },
   "table": {
@@ -79,30 +79,30 @@
     "note": "Ø Rang = Mittel SMA_S/SMA_L − 1 über S=75–125, L=175–250 (tiefster = Flop) · Rebound = Ø Rendite über 42/50/56 Handelstage · Gate = Kurs > SMA100/200/250 (erfüllt/3) · Ziel = Zielquote (alle 3x; Anleihe-Signal TLT, Produkt 3x IEF)",
     "rows": [
       [
-        "3x India",
-        -0.02139,
-        -0.021956,
+        "3x UST",
+        -0.021082,
+        -0.004439,
         "0/3",
         0.0
       ],
       [
-        "3x UST",
-        -0.02048,
-        -0.007031,
-        "0/3",
-        0.183
+        "3x India",
+        -0.020873,
+        -0.003259,
+        "2/3",
+        0.0
       ],
       [
         "3x EM",
-        0.042177,
-        -0.084305,
+        0.040944,
+        -0.090481,
         "0/3",
         0.0
       ],
       [
         "3x Nasdaq",
-        0.060967,
-        -0.045102,
+        0.059995,
+        -0.038617,
         "2/3",
         0.0
       ]
@@ -716,26 +716,26 @@
       },
       {
         "date": "2026-10-30",
-        "lead": "TLT_LONG",
-        "allocation": "TLT_LONG:0.183"
+        "lead": "CASH",
+        "allocation": "CASH"
       }
     ]
   },
   "freshness": {
     "^NDX": {
-      "last": "2026-11-03",
+      "last": "2026-11-04",
       "fresh": true
     },
     "EEM": {
-      "last": "2026-11-03",
+      "last": "2026-11-04",
       "fresh": true
     },
     "^BSESN": {
-      "last": "2026-11-03",
+      "last": "2026-11-04",
       "fresh": true
     },
     "TLT": {
-      "last": "2026-11-03",
+      "last": "2026-11-04",
       "fresh": true
     }
   },
