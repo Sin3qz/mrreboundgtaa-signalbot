@@ -1,15 +1,16 @@
 📊 MR-Rebound-GTAA (Mean-Reversion, monatlich) — Tagesstatus
 Ziel seit 02.11.2026 (Signal 30.10.):
-• 100.0%  Cash
+• 18.3%  3x US-Treasury 7-10y
+• 81.7%  Cash
 Nächstes Signal: Schluss 30.11. → Handel 01.12.2026
 
 Signale (1x-Kurse, Stand 06.11.):
 ```
-Asset  Rang Rebnd Gate Ziel
-UST     -2%   -1%  1/3    –
-India   -2%   +3%  3/3    –
-EM      +4%  -12%  0/3    –
-Nasdaq  +6%   -8%  0/3    –
+Asset  Rang Rebnd Gate  Ziel
+UST     -2%    0%  1/3 18.3%
+India   -2%   +3%  3/3     –
+EM      +4%  -12%  0/3     –
+Nasdaq  +6%   -8%  0/3     –
 ```
 Rang = Ø SMA75–125/SMA175–250 (tiefster = Flop)
 Rebnd = Ø 42/50/56-Tage-Rendite
