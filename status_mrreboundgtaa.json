@@ -2,12 +2,15 @@
   "strategy": "MR-Rebound-GTAA (Mean-Reversion, monatlich)",
   "name": "MR-Rebound-GTAA",
   "key": "mrreboundgtaa",
-  "updated": "2026-11-11T00:45:15.789266+01:00",
+  "updated": "2026-11-12T03:02:38.398642+01:00",
   "rebalance": "monthly",
   "rebalanceLabel": "Signal Monatsletzter → Handel 1. Handelstag",
   "asOf": "2026-11-10",
-  "needsRetry": false,
-  "dataWarnings": [],
+  "needsRetry": true,
+  "dataWarnings": [
+    "EM (EEM): letzter Kurs 10.11.2026 (erwartet 11.11.2026)",
+    "UST (TLT): letzter Kurs 10.11.2026 (erwartet 11.11.2026)"
+  ],
   "decisionDate": "2026-10-30",
   "tradeDate": "2026-11-02",
   "nextDecision": "2026-11-30",
@@ -723,20 +726,20 @@
   },
   "freshness": {
     "^NDX": {
-      "last": "2026-11-10",
+      "last": "2026-11-11",
       "fresh": true
     },
     "EEM": {
       "last": "2026-11-10",
-      "fresh": true
+      "fresh": false
     },
     "^BSESN": {
-      "last": "2026-11-09",
+      "last": "2026-11-11",
       "fresh": true
     },
     "TLT": {
       "last": "2026-11-10",
-      "fresh": true
+      "fresh": false
     }
   },
   "firstDates": {

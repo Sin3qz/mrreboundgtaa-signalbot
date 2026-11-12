@@ -17,4 +17,10 @@ Rebnd = Ø 42/50/56-Tage-Rendite
 Gate = Kurs > SMA100/200/250
 Ziel = Quote (Nasdaq/EM/India 3x, Anleihe 3x IEF)
 
+⚠️ Kursdaten evtl. veraltet — Retry läuft; ntfy erst mit frischen Daten.
+
+⚠️ Datenprüfung:
+• EM (EEM): letzter Kurs 10.11.2026 (erwartet 11.11.2026)
+• UST (TLT): letzter Kurs 10.11.2026 (erwartet 11.11.2026)
+
 Hebel-ETPs: Pfad-/Emittentenrisiko. KEINE ANLAGEBERATUNG.
