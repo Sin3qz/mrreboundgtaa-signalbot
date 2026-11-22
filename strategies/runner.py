@@ -14,7 +14,7 @@ import pandas as pd
 from . import common as U
 from . import dip_core as DC
 from .constants import (STRAT_NAME, STRAT_LONG, STRAT_KEY, ASSETS, BASKETS, BASKET_LABELS, SMA_SHORT, SMA_LONG,
-                        REBOUND_DAYS, GATE_SMA, OLD_GATE_SMA, PARAM_SWITCH, TILT, GRID_START, HISTORY_START, TRY_COUNT,
+                        REBOUND_DAYS, GATE_SMA, TILT, GRID_START, HISTORY_START, TRY_COUNT,
                         NTFY_LATE_DAYS, INFO_FOOTER, MIN_ROWS)
 
 STATUS_FILE = f"status_{STRAT_KEY}.json"
@@ -58,21 +58,8 @@ def prepare(raw):
     return grid, P, (not fresh), sorted(set(warns)), fr
 
 
-def gate_for(day):
-    """Gate-SMAs fuer die Entscheidung auf dem Schlusskurs von `day` (Stichtag PARAM_SWITCH)."""
-    return list(OLD_GATE_SMA) if pd.Timestamp(day) < pd.Timestamp(PARAM_SWITCH) else list(GATE_SMA)
-
-
 def compute(P, rows):
-    """Zielgewichte je Zeile; Zeilen vor dem Stichtag mit dem alten Gate, danach mit GATE_SMA (Zeilen aufsteigend)."""
-    rows = np.asarray(rows, dtype=int)
-    old = np.asarray(P.index[rows] < pd.Timestamp(PARAM_SWITCH))
-    parts = [(rows[m], g) for m, g in ((old, OLD_GATE_SMA), (~old, GATE_SMA)) if m.any()]
-    out = [DC.dip_weights(P, r, BASKETS, SMA_SHORT, SMA_LONG, REBOUND_DAYS, list(g), TILT) for r, g in parts]
-    if len(out) == 1:
-        return out[0]
-    W = np.concatenate([np.asarray(o[0]) for o in out])
-    return W, {k: np.concatenate([np.asarray(o[1][k]) for o in out]) for k in out[0][1]}
+    return DC.dip_weights(P, rows, BASKETS, SMA_SHORT, SMA_LONG, REBOUND_DAYS, GATE_SMA, TILT)
 
 
 def trade_view(w):
@@ -242,7 +229,7 @@ def run_strategy(raw=None, write_files=True):
         "table": {"head": ["Baustein", "Ø Rang", "Rebound", "Gate", "Ziel"],
                   "note": (f"Ø Rang = Mittel SMA_S/SMA_L − 1 über S={SMA_SHORT[0]}–{SMA_SHORT[-1]}, L={SMA_LONG[0]}–{SMA_LONG[-1]} "
                            f"(tiefster = Flop) · Rebound = Ø Rendite über {'/'.join(map(str, REBOUND_DAYS))} Handelstage · "
-                           f"Gate = Kurs > SMA{'/'.join(map(str, gate_for(idx[-1])))} (erfüllt/3) · Ziel = Zielquote (alle 3x; Anleihe-Signal TLT, Produkt 3x IEF)"),
+                           f"Gate = Kurs > SMA{'/'.join(map(str, GATE_SMA))} (erfüllt/3) · Ziel = Zielquote (alle 3x; Anleihe-Signal TLT, Produkt 3x IEF)"),
                   "rows": [[f"{ASSETS[a]['leverage']}x {ASSETS[a]['short']}", U.num(info["rank"][-1][AL.index(a)]), U.num(info["rebound"][-1][AL.index(a)]),
                             f"{int(info['gates'][-1][AL.index(a)])}/{len(GATE_SMA)}", U.num(w[AL.index(a)], 4)] for a in order],
                   "kinds": ["text", "spct", "spct", "text", "pct1"]},

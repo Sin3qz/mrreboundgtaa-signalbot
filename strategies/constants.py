@@ -15,7 +15,7 @@
 #
 #  Regel je Korb und Variante (S, L, R, G), gemittelt ueber 34.884 Varianten:
 #     Kurz-SMA S = 75..125, Lang-SMA L = 175..250 (1er), Rebound R = 42/50/56 Tage,
-#     Gate G = Kurs > SMA150 / SMA200 / SMA250 (bis Entscheidung 31.10.2026: SMA100 / SMA200 / SMA250).
+#     Gate G = Kurs > SMA100 / SMA200 / SMA250.
 #     Flop 2 nach SMA_S/SMA_L - 1 (die zwei schwaechsten), bestaetigt wenn
 #     Rebound > 0 UND Gate; beide -> 1/3 (schwaechstes) + 2/3 (2.-schwaechstes);
 #     nur eines -> max(Slot, 50 %); sonst Cash.  Kein Vol-Target.
@@ -47,14 +47,7 @@ BASKET_LABELS = ["A: Nasdaq · EM · TLT", "B: Nasdaq · India · TLT"]
 SMA_SHORT = list(range(75, 126))        # 51 Laengen
 SMA_LONG = list(range(175, 251))        # 76 Laengen
 REBOUND_DAYS = [42, 50, 56]
-GATE_SMA = [150, 200, 250]              # ab Entscheidung 30.11.2026 (vorher 100/200/250), siehe unten
-# Gate 150/200/250 statt 100/200/250 (Langzeitpruefung 1995-2026, Dashboard-Repo studien/STUDIE.md, Nachtrag 22.11.2026):
-# gemeinsames Raster S x L x Rebound x Gate (625 Kombinationen, je 21 Entscheidungstage); Gate-Plateau 100/200/250 bis
-# 200/250/300, danach deutlich schwaecher -> Mitte 150/200/250. Sharpe gleich (0,824 vs. 0,825), MaxDD -32,5 % statt
-# -36,2 % (nicht signifikant). S 75-125, L 175-250 und Rebound 42/50/56 liegen bereits in der Mitte ihrer Plateaus.
-# Stichtag: Monatsentscheidungen vor PARAM_SWITCH mit dem alten Gate (die gehaltene Oktober-Entscheidung bleibt).
-PARAM_SWITCH = "2026-11-23"
-OLD_GATE_SMA = [100, 200, 250]
+GATE_SMA = [100, 200, 250]
 TILT = (1 / 3, 2 / 3)                   # schwaechstes, 2.-schwaechstes; Slotfloor 50 %
 
 

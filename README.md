@@ -18,12 +18,11 @@ EUR-unhedged.
 
 - **Zeitplan:** Signal = Schlusskurse des **letzten Handelstags** des Monats, Handel am **1. Handelstag** des Folgemonats.
 - **Je Korb und Variante** — Kurz-SMA S = 75…125, Lang-SMA L = 175…250 (1er-Schritte), Rebound R = 42/50/56 Handelstage,
-  Gate G = Kurs > SMA150/SMA200/SMA250 (bis zur Entscheidung 31.10.2026: SMA100/200/250) → **34.884 Varianten**, gemittelt:
+  Gate G = Kurs > SMA100/SMA200/SMA250 → **34.884 Varianten**, gemittelt:
   - Rangwert = SMA_S / SMA_L − 1; **Flop 2** = die zwei schwächsten.
   - bestätigt, wenn Rendite über R Tage > 0 **und** Kurs > SMA_G.
   - beide bestätigt → schwächstes 1/3, zweitschwächstes 2/3; nur eines → max(Slot; 50 %); keines → Cash.
 - Gesamt = ½ Korb A + ½ Korb B. **Kein Vol-Target.**
-- **Gate ab der Entscheidung 30.11.2026: SMA150/200/250** statt 100/200/250 (Langzeitprüfung 1995–2026, gemeinsames Raster S × L × Rebound × Gate mit 21 Entscheidungstagen: Gate-Plateau 100/200/250 bis 200/250/300, Mitte 150/200/250; Sharpe gleich, MaxDD −32,5 % statt −36,2 %, nicht signifikant; S, L und Rebound liegen bereits in der Plateau-Mitte). Stichtag `PARAM_SWITCH` = 23.11.2026: frühere Monatsentscheidungen (auch die gehaltene vom 31.10.) bleiben unverändert, es gibt keine Umschichtung vor dem Monatsende.
 - **Anleihe:** Signal TLT, volle Signalquote im **3x IEF** (ab 02.11.2026 statt 5x TLT: hohe Produktkosten; Backtest 2004–2026 gleiche CAGR 17,8 %, MaxDD −38,6 % statt −44,3 %, Sharpe 0,84 statt 0,71).
 
 Backtest 1995+ (damalige Umsetzung mit TLT 5x): 21 Tranchen CAGR 19,4 %, MaxDD −47,6 %, Sortino 0,85, z31 2,68, z4 2,01,
