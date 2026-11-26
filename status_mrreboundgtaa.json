@@ -2,7 +2,7 @@
   "strategy": "MR-Rebound-GTAA (Mean-Reversion, monatlich)",
   "name": "MR-Rebound-GTAA",
   "key": "mrreboundgtaa",
-  "updated": "2026-11-26T00:38:27.182245+01:00",
+  "updated": "2026-11-27T00:52:28.084732+01:00",
   "rebalance": "monthly",
   "rebalanceLabel": "Signal Monatsletzter → Handel 1. Handelstag",
   "asOf": "2026-11-25",
@@ -731,7 +731,7 @@
       "fresh": true
     },
     "^BSESN": {
-      "last": "2026-11-25",
+      "last": "2026-11-26",
       "fresh": true
     },
     "TLT": {
